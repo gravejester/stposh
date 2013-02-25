@@ -37,3 +37,4 @@ Also included are full command completions of native PowerShell 3 cmdlets as wel
 - try-catch-finally
 - while
 
+NOTE! This work is partly based on the existing PowerShell 2 addon for Sublime Text 2 by Guillermo López-Anglada (https://github.com/SublimeText/PowerShell)
