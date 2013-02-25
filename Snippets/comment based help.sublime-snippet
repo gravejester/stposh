@@ -1,0 +1,31 @@
+<snippet>
+	<content><![CDATA[<#
+.SYNOPSIS
+${1:Short description}
+
+.DESCRIPTION
+${2:Detailed description}
+
+.PARAMETER ${3:parameter}
+${4:Description of parameter}
+
+.EXAMPLE
+${5:Example text}
+
+.INPUTS
+$6
+
+.OUTPUTS
+$7
+
+.NOTES
+$8
+
+.LINK
+$9
+#>]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>help</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.powershell</scope>
+</snippet>

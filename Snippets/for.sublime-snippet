@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[for (\$i=${1:initialization}; \$i ${2:-lt} ${3:condition}; \$i++) {
+	${4:# do something}
+}]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>for</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.powershell</scope>
+</snippet>
