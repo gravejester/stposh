@@ -3,6 +3,8 @@ stposh
 
 Add PowerShell support to Sublime Text 2
 
+NEW! Added 11 themes and one dark theme template.
+
 Supports syntax highlighting of native PowerShell 3 cmdlets and language, as well as added cmdlets for:
 
 - Microsoft Failover Cluster
@@ -36,5 +38,7 @@ Also included are full command completions of native PowerShell 3 cmdlets as wel
 - try-catch
 - try-catch-finally
 - while
+
+User-defined functions will populate symbol list.
 
 NOTE! This work is partly based on the existing PowerShell 2 addon for Sublime Text 2 by Guillermo López-Anglada (https://github.com/SublimeText/PowerShell)
