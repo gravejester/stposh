@@ -99,10 +99,6 @@
 		</dict>
 		<dict>
 			<key>include</key>
-			<string>#reservedWords</string>
-		</dict>
-		<dict>
-			<key>include</key>
 			<string>#scriptblock</string>
 		</dict>
 		<dict>
@@ -172,6 +168,10 @@
 		<dict>
 			<key>include</key>
 			<string>#groupPolicy</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#reservedWords</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -495,7 +495,7 @@
 			<key>comment</key>
 			<string>Other operators</string>
 			<key>match</key>
-			<string>(;|&amp;|,|\.\s|\||\.\.|::|\[|\]|\(|\)|@|\+\+|--|&gt;|!|-(?i:as|is|isnot|split|join|f)\b)</string>
+			<string>(;|&amp;|,|\.\s|\||\.\.|::|\[|\]|\(|\)|@|\+\+|--|&gt;|!|(?&lt;!\w)-(?i:as|is|isnot|split|join|f)\b)</string>
 			<key>name</key>
 			<string>keyword.operator.other.powershell</string>
 		</dict>
@@ -531,7 +531,7 @@
 			<key>comment</key>
 			<string>PowerShell reserved words</string>
 			<key>match</key>
-			<string>\b(?i:Begin|Exit|Process|Break|Filter|Return|Catch|Finally|Sequence|Class|For|Switch|Continue|ForEach|Throw|Data|From|Trap|Define|Function|Try|Do|If|Until|DynamicParam|In|Using|Else|InlineScript|Var|ElseIf|Parallel|While|End|Param|Workflow)(?=\s)\b</string>
+			<string>\b(?&lt;!-)(?i:Begin|Exit|Process|Break|Filter|Return|Catch|Finally|Sequence|Class|For|Switch|Continue|ForEach|Throw|Data|From|Trap|Define|Function|Try|Do|If|Until|DynamicParam|In|Using|Else|InlineScript|Var|ElseIf|Parallel|While|End|Param|Workflow)\b</string>
 			<key>name</key>
 			<string>keyword.control.powershell</string>
 		</dict>

@@ -41,7 +41,6 @@
 	{ "include": "#hereStringSingleQuoted" },
 	{ "include": "#variable" },
 	{ "include": "#subExpression" },
-	{ "include": "#reservedWords" },
 	{ "include": "#scriptblock"	},
 	{ "include": "#numericConstant"	},
 	{ "include": "#advancedFunctionsParameter" },
@@ -60,6 +59,7 @@
 	{ "include": "#powerCLI" },
 	{ "include": "#activeDirectory" },
 	{ "include": "#groupPolicy" },
+  { "include": "#reservedWords" },
 	{ "include": "#smartFunctionMatch" }
   ],
   "repository": {
@@ -90,12 +90,12 @@
     },
     "otherOperator": {
     	"comment": "Other operators",
-    	"match": "(;|&|,|\\.\\s|\\||\\.\\.|::|\\[|\\]|\\(|\\)|@|\\+\\+|--|>|!|-(?i:as|is|isnot|split|join|f)\\b)",
+    	"match": "(;|&|,|\\.\\s|\\||\\.\\.|::|\\[|\\]|\\(|\\)|@|\\+\\+|--|>|!|(?<!\\w)-(?i:as|is|isnot|split|join|f)\\b)",
     	"name": "keyword.operator.other.powershell"
     },
   	"reservedWords": {
   		"comment": "PowerShell reserved words",
-  		"match": "\\b(?i:Begin|Exit|Process|Break|Filter|Return|Catch|Finally|Sequence|Class|For|Switch|Continue|ForEach|Throw|Data|From|Trap|Define|Function|Try|Do|If|Until|DynamicParam|In|Using|Else|InlineScript|Var|ElseIf|Parallel|While|End|Param|Workflow)(?=\\s)\\b",
+  		"match": "\\b(?<!-)(?i:Begin|Exit|Process|Break|Filter|Return|Catch|Finally|Sequence|Class|For|Switch|Continue|ForEach|Throw|Data|From|Trap|Define|Function|Try|Do|If|Until|DynamicParam|In|Using|Else|InlineScript|Var|ElseIf|Parallel|While|End|Param|Workflow)\\b",
         "name": "keyword.control.powershell"
   	},
   	"advancedFunctionsParameter": {

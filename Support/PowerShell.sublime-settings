@@ -30,5 +30,5 @@
     "auto_complete_with_fields": false,
 
     // Characters that are considered to separate words
-    "word_separators": "./\\()\"':,.;<>~!@#$%^&*|+=[]{}`~?"
+    "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?"
 }
