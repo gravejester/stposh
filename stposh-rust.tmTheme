@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>PowerShell ISE plus</string>
+	<string>stposh-rust</string>
 	<key>author</key>
 	<string>Øyvind Kallstad</string>
 	<key>settings</key>
@@ -12,29 +12,29 @@
 			<key>settings</key>
 			<dict>
 				<key>background</key>
-				<string>#FFFFFF</string>
+				<string>#181617</string>
 				<key>bracketContentsForeground</key>
-				<string>#000000ff</string>
+				<string>#ffffffff</string>
 				<key>bracketContentsOptions</key>
 				<string>foreground</string>
 				<key>bracketsForeground</key>
-				<string>#000000ff</string>
+				<string>#ffffffff</string>
 				<key>bracketsOptions</key>
 				<string>foreground</string>
 				<key>caret</key>
-				<string>#000000</string>
+				<string>#F8F8F0</string>
 				<key>findHighlight</key>
 				<string>#FFE792</string>
 				<key>findHighlightForeground</key>
 				<string>#000000</string>
 				<key>foreground</key>
-				<string>#282828</string>
+				<string>#F5F5F5</string>
 				<key>invisibles</key>
 				<string>#3B3A32</string>
 				<key>lineHighlight</key>
-				<string>#000000</string>
+				<string>#acacac</string>
 				<key>selection</key>
-				<string>#cccccc</string>
+				<string>#49483E</string>
 				<key>selectionBorder</key>
 				<string>#222218</string>
 				<key>tagsOptions</key>
@@ -51,7 +51,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#005b00</string>
+				<string>#725554</string>
 			</dict>
 		</dict>
 		<dict>
@@ -62,9 +62,9 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>bold</string>
+				<string></string>
 				<key>foreground</key>
-				<string>#005b00</string>
+				<string>#a7a7a7</string>
 			</dict>
 		</dict>
 		<dict>
@@ -75,9 +75,9 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string>italic</string>
+				<string></string>
 				<key>foreground</key>
-				<string>#005b00</string>
+				<string>#858585</string>
 			</dict>
 		</dict>
 		<dict>
@@ -90,20 +90,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#005b00</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Other constants</string>
-			<key>scope</key>
-			<string>constant.other</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#000000</string>
+				<string>#e1e1e1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -114,9 +101,9 @@
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
-				<string></string>
+				<string>italic</string>
 				<key>foreground</key>
-				<string>#aa48bb</string>
+				<string>#D66858</string>
 			</dict>
 		</dict>
 		<dict>
@@ -129,7 +116,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#278f8f</string>
+				<string>#89C50E</string>
 			</dict>
 		</dict>
 		<dict>
@@ -142,20 +129,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#727272</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Language Operators - comparison/bitwise/logical</string>
-			<key>scope</key>
-			<string>keyword.operator.comparison, keyword.operator.bitwise, keyword.operator.logical</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#0000a0</string>
+				<string>#AB5252</string>
 			</dict>
 		</dict>
 		<dict>
@@ -168,7 +142,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#0000a0</string>
+				<string>#BB7373</string>
 			</dict>
 		</dict>
 		<dict>
@@ -181,7 +155,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#278f8f</string>
+				<string>#E0D9E1</string>
 			</dict>
 		</dict>
 		<dict>
@@ -194,7 +168,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#8e1717</string>
+				<string>#668284</string>
 			</dict>
 		</dict>
 		<dict>
@@ -220,20 +194,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string></string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>'$' - variable operator</string>
-			<key>scope</key>
-			<string>keyword.operator.variable</string>
-			<key>settings</key>
-			<dict>
-				<key>fontStyle</key>
-				<string></string>
-				<key>foreground</key>
-				<string>#ff0000</string>
+				<string>#6fbf60</string>
 			</dict>
 		</dict>
 		<dict>
@@ -246,7 +207,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#ff0000</string>
+				<string>#668284</string>
 			</dict>
 		</dict>
 		<dict>
@@ -259,7 +220,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#ff0000</string>
+				<string>#AB5252</string>
 			</dict>
 		</dict>
 		<dict>
@@ -272,7 +233,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#ff0000</string>
+				<string>#BADBB7</string>
 			</dict>
 		</dict>
 		<dict>
@@ -285,7 +246,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#000000</string>
+				<string>#e899e0</string>
 			</dict>
 		</dict>
 		<dict>
@@ -298,7 +259,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#0000a0</string>
+				<string>#53777A</string>
 			</dict>
 		</dict>
 		<dict>
@@ -311,7 +272,7 @@
 				<key>fontStyle</key>
 				<string></string>
 				<key>foreground</key>
-				<string>#0000ff</string>
+				<string>#B9D7D9</string>
 			</dict>
 		</dict>
 	</array>
