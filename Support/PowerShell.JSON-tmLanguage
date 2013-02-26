@@ -5,13 +5,13 @@
 		{
         "comment": "Line Comments", 
         "match": "(#).*$\\n?", 
-        "name": "comment.line.number-sign"
+        "name": "comment.line.number-sign.powershell"
     },
     {
     	"comment": "Block Comments",
     	"begin": "<#",
     	"end": "#>",
-    	"name": "comment.block",
+    	"name": "comment.block.powershell",
     	"patterns": [
     		{ "include": "#commentEmbeddedDocs"	}
     	]
@@ -20,15 +20,15 @@
     	"comment": "Stop-Parsing",
     	"captures": {
     		"1": { "name": "constant.language.powershell" },
-    		"2": { "name": "source"	}
+    		"2": { "name": "source.powershell"	}
     	},
     	"match": "(--%).*(?=#)",
-    	"name": "source"
+    	"name": "source.powershell"
     },
     {
         "comment": "Name of user-defined functions", 
         "match": "(?<=(function ))\\w+[-]*\\w+", 
-        "name": "entity.name.function"
+        "name": "entity.name.function.powershell"
     },
     {
         "comment": ".NET class", 
@@ -66,32 +66,32 @@
     "arithmeticOperator": {
     	"comment": "Arithmetic operators",
     	"match": "(?<=\\s)(-|/|%|\\*|\\+)(?=\\s)",
-    	"name": "keyword.operator.arithmetic"
+    	"name": "keyword.operator.arithmetic.powershell"
     },
     "assignmentOperator": {
     	"comment": "Assignment operators",
     	"match": "(?<=\\s)(=|\\+=|-=|/=|%=)(?=\\s)",
-    	"name": "keyword.operator.assignment"
+    	"name": "keyword.operator.assignment.powershell"
     },
     "comparisonOperator": {
     	"comment": "Comparison operators",
     	"match": "-(?i:eq|ne|gt|lt|le|ge|match|notmatch|replace|like|notlike|in|notin|contains|notcontains)\\b",
-    	"name": "keyword.operator.comparison"
+    	"name": "keyword.operator.comparison.powershell"
     },
     "bitwiseOperator": {
     	"comment": "Bitwise operators",
     	"match": "-(?i:band|bor|bxor|bnot)\\b",
-    	"name": "keyword.operator.bitwise"
+    	"name": "keyword.operator.bitwise.powershell"
     },
     "logicalOperator": {
     	"comment": "Logical operators",
     	"match": "-(?i:and|or|xor|not)\\b",
-    	"name": "keyword.operator.logical"
+    	"name": "keyword.operator.logical.powershell"
     },
     "otherOperator": {
     	"comment": "Other operators",
     	"match": "(;|&|,|\\.\\s|\\||\\.\\.|::|\\[|\\]|\\(|\\)|@|\\+\\+|--|>|!|-(?i:as|is|isnot|split|join|f)\\b)",
-    	"name": "keyword.operator.other"
+    	"name": "keyword.operator.other.powershell"
     },
   	"reservedWords": {
   		"comment": "PowerShell reserved words",
@@ -100,13 +100,13 @@
   	},
   	"advancedFunctionsParameter": {
         "match": "\\b(?i:ConfirmImpact|DefaultParameterSetName|HelpURI|SupportsPaging|SupportsShouldProcess|PositionalBinding|Mandatory|Position|ParameterSetName|ValueFromPipeline|ValueFromPipelinebyPropertyName|ValueFromRemainingArguments|HelpMessage)\\b", 
-        "name": "constant.language.powershell"
+        "name": "variable.parameter.powershell"
     },
     "typeAccelerator": {
         "begin": "(?<=\\[)(?i:Alias|AllowEmptyCollection|AllowEmptyString|AllowNull|Array|Bool|Byte|Char|CmdletBinding|DateTime|Decimal|ADSI|ADSISearcher|Double|Float|Single|GUID|HashTable|Int|Int32|Int16|Long|Int64|WMIClass|WMI|WMISearcher|CIMInstance|NullString|OutputType|Parameter|PSCredential|PSDefaultValue|PSListModifier|PSObject|PSCustomObject|PSPrimitiveDictionary|Ref|PSTypeNameAttribute|Regex|SByte|String|SupportsWildcards|Switch|CultureInfo|IPAddress|MailAddress|BigInt|SecureString|TimeSpan|UInt16|UInt32|UInt64|URI|ValidateCount|ValidateLength|ValidateNotNullorEmpty|ValidatePattern|ValidateRange|ValidateScript|ValidateSet|Version|void|XML|ScriptBlock|Type|PSModuleInfo|Powershell|RunspaceFactory|Runspace)", 
         "comment": ".NET Type Accelerators supported in PowerShell version 3", 
         "end": "(?>)(?=\\](?!\\]))", 
-        "name": "constant.language.powershell", 
+        "name": "constant.language.net.powershell", 
         "patterns": [
             { "include": "#variable" }, 
             { "include": "#numericConstant" }, 
@@ -119,31 +119,31 @@
   		"comment": "Sub expression",
   		"begin": "\\$\\(",
   		"beginCaptures": {
-  			"0": { "name": "keyword.operator.subexpression"	}
+  			"0": { "name": "keyword.operator.subexpression.powershell"	}
   		},
   		"end": "\\)",
   		"endCaptures": {
-  			"0": { "name": "keyword.operator.subexpression"	}
+  			"0": { "name": "keyword.operator.subexpression.powershell"	}
   		},
-  		"contentName": "meta.subexpression",
+  		"contentName": "meta.subexpression.powershell",
   		"patterns": [
   			{ "include": "#self" },
   			{ "include": "#variable" },
   			{ "include": "#cmdlet" },
   			{ "include": "#numericConstant"	},
   			{ "include": "#arithmeticOperator" },
-			{ "include": "#assignmentOperator" },
-			{ "include": "#comparisonOperator" },
-			{ "include": "#bitwiseOperator"	},
-			{ "include": "#logicalOperator"	},
-			{ "include": "#otherOperator" }
+  			{ "include": "#assignmentOperator" },
+  			{ "include": "#comparisonOperator" },
+  			{ "include": "#bitwiseOperator"	},
+  			{ "include": "#logicalOperator"	},
+  			{ "include": "#otherOperator" }
   		]
   	},
   	"scriptblock": {
   		"comment": "ScriptBlock",
         "begin": "\\{", 
         "end": "\\}", 
-        "name": "meta.scriptblock", 
+        "name": "meta.scriptblock.powershell", 
         "patterns": [
             { "include": "$self" }
         ]
@@ -152,12 +152,12 @@
   		"comment": "Double Quoted Strings",
   		"begin": "(?<!\")\"",
   		"end": "\"(?!\")",
-  		"name": "string.quoted.double",
+  		"name": "string.quoted.double.powershell",
   		"patterns": [
   			{ "include": "#doubleQuotedStringEscape" },
   			{ "include": "#variable" },
   			{ "include": "text.html.basic" },
-            { "include": "#variableStringFormatting" },
+        { "include": "#variableStringFormatting" },
   			{ "include": "#subExpression" }
   		]
   	},
@@ -166,12 +166,12 @@
   		"patterns": [
   			{
   				"match": "`[0abfnrtv\"'$`]",
-  				"name": "constant.character.escape"
+  				"name": "constant.character.escape.powershell"
   			},
   			{
-                "match": "\"\"", 
-                "name": "constant.character.escape"
-            }
+          "match": "\"\"", 
+          "name": "constant.character.escape.powershell"
+        }
   		]
   		
   	},
@@ -179,7 +179,7 @@
   		"comment": "Single Quoted Strings",
   		"begin": "(?<!')'",
   		"end": "'(?!')",
-  		"name": "string.quoted.single",
+  		"name": "string.quoted.single.powershell",
   		"patterns": [
   			{ "include": "#singleQuotedStringEscape" },
   			{ "include": "#variableStringFormatting" }
@@ -190,7 +190,7 @@
   		"patterns": [
   			{
   				"match": "''",
-  				"name": "constant.character.escape"
+  				"name": "constant.character.escape.powershell"
   			}
   		]
   		
@@ -199,30 +199,31 @@
   		"comment": "Double Quoted Here String",
   		"begin": "@\"$",
   		"end": "^\"@$",
-  		"name": "string.quoted.double.here-doc",
+  		"name": "string.quoted.double.here-doc.powershell",
   		"patterns": [
-  			{ "include": "#variable" },
+  			    { "include": "#variable" },
             { "include": "#numericConstant" },
             { "include": "#doubleQuotedStringEscape" },
-            { "include": "text.html.basic" }
+            { "include": "text.html.basic" },
+            { "include": "#subExpression" }
         ]
   	},
   	"hereStringSingleQuoted": {
   		"comment": "Double Quoted Here String",
   		"begin": "@'$",
   		"end": "^'@$",
-  		"name": "string.quoted.single.here-doc"
+  		"name": "string.quoted.single.here-doc.powershell"
   	},
   	"variableStringFormatting": {
   		"comment": "String Formatting Variables",
   		"match": "(\\{)(\\d+)(:?)([NnDdCcPpXx]?)(\\d*)(\\})",
   		"captures": {
-  			"1": { "name": "keyword.other" },
-  			"2": { "name": "constant.numeric" },
-  			"3": { "name": "source"	},
-  			"4": { "name": "constant.other"	},
-  			"5": { "name": "constant.numeric" },
-  			"6": { "name": "keyword.other" }
+  			"1": { "name": "keyword.other.powershell" },
+  			"2": { "name": "constant.numeric.powershell" },
+  			"3": { "name": "source.powershell"	},
+  			"4": { "name": "constant.other.powershell"	},
+  			"5": { "name": "constant.numeric.powershell" },
+  			"6": { "name": "keyword.other.powershell" }
   		}
   	},
   	"variable": {
@@ -235,20 +236,20 @@
   			{
   				"comment": "User variables in the form $scope:variableName and $variableName",
   				"captures": {
-  					"1": { "name": "keyword.other" },
-  					"2": { "name": "storage.modifier" },
-  					"3": { "name": "variable.other"	}
+  					"1": { "name": "keyword.operator.variable.powershell" },
+  					"2": { "name": "storage.modifier.powershell" },
+  					"3": { "name": "variable.other.powershell"	}
   				},
   				"match": "(\\$)((?i:private|script|global|env|function|alias|cert|variable|hkcu|hklm|wsman):)?(\\w+)"
   			},
   			{
   				"comment": "User variables in the form ${scope:variableName} or ${variableName}",
   				"captures": {
-  					"1": { "name": "keyword.other" },
-  					"2": { "name": "keyword.other" },
-  					"3": { "name": "storage.modifier" },
-  					"4": { "name": "variable.other"	},
-  					"5": { "name": "keyword.other" }
+  					"1": { "name": "keyword.operator.variable.powershell" },
+  					"2": { "name": "keyword.other.powershell" },
+  					"3": { "name": "storage.modifier.powershell" },
+  					"4": { "name": "variable.other.powershell"	},
+  					"5": { "name": "keyword.other.powershell" }
   				},
   				"match": "(\\$)(\\{)((?i:private|script|global|env|function|alias|cert|variable|hkcu|hklm|wsman):)?(.+)(\\})"
   			}
@@ -296,7 +297,7 @@
     "parameter": {
         "comment": "General parameter matching", 
         "match": "(?<=\\s)-(\\w+)", 
-        "name": "variable.parameter"
+        "name": "variable.parameter.powershell"
     },
     "commentEmbeddedDocs": {
         "comment": "Comment based help", 
@@ -323,42 +324,42 @@
     "cmdlet": {
         "comment": "All built-in PowerShell Cmdlets as of version 3", 
         "match": "\\b(?i:Add-BitsFile|Add-Computer|Add-Content|Add-History|Add-JobTrigger|Add-Member|Add-PSSnapin|Add-Type|Checkpoint-Computer|Clear-Content|Clear-EventLog|Clear-History|Clear-Item|Clear-ItemProperty|Clear-Variable|Compare-Object|Complete-BitsTransfer|Complete-Transaction|Connect-PSSession|Connect-WSMan|ConvertFrom-Csv|ConvertFrom-Json|ConvertFrom-SecureString|ConvertFrom-StringData|Convert-Path|ConvertTo-Csv|ConvertTo-Html|ConvertTo-Json|ConvertTo-SecureString|ConvertTo-Xml|Copy-Item|Copy-ItemProperty|Debug-Process|Disable-ComputerRestore|Disable-JobTrigger|Disable-PSBreakpoint|Disable-PSRemoting|Disable-PSSessionConfiguration|Disable-ScheduledJob|Disable-WSManCredSSP|Disconnect-PSSession|Disconnect-WSMan|Enable-ComputerRestore|Enable-JobTrigger|Enable-PSBreakpoint|Enable-PSRemoting|Enable-PSSessionConfiguration|Enable-ScheduledJob|Enable-WSManCredSSP|Enter-PSSession|Exit-PSSession|Export-Alias|Export-Clixml|Export-Console|Export-Counter|Export-Csv|Export-FormatData|Export-ModuleMember|Export-PSSession|ForEach-Object|Format-Custom|Format-List|Format-Table|Format-Wide|Get-Acl|Get-Alias|Get-AppLockerFileInformation|Get-AppLockerPolicy|Get-AuthenticodeSignature|Get-BitsTransfer|Get-ChildItem|Get-CimAssociatedInstance|Get-CimClass|Get-CimInstance|Get-CimSession|Get-Command|Get-ComputerRestorePoint|Get-Content|Get-ControlPanelItem|Get-Counter|Get-Credential|Get-Culture|Get-Date|Get-Event|Get-EventLog|Get-EventSubscriber|Get-ExecutionPolicy|Get-FormatData|Get-Help|Get-History|Get-Host|Get-HotFix|Get-Item|Get-ItemProperty|Get-Job|Get-JobTrigger|Get-Location|Get-Member|Get-Module|Get-PfxCertificate|Get-Process|Get-PSBreakpoint|Get-PSCallStack|Get-PSDrive|Get-PSProvider|Get-PSSession|Get-PSSessionConfiguration|Get-PSSnapin|Get-Random|Get-ScheduledJob|Get-ScheduledJobOption|Get-Service|Get-TraceSource|Get-Transaction|Get-TroubleshootingPack|Get-TypeData|Get-UICulture|Get-Unique|Get-Variable|Get-WinEvent|Get-WmiObject|Get-WSManCredSSP|Get-WSManInstance|Group-Object|Import-Alias|Import-Clixml|Import-Counter|Import-Csv|Import-LocalizedData|Import-Module|Import-PSSession|Invoke-CimMethod|Invoke-Command|Invoke-Expression|Invoke-History|Invoke-Item|Invoke-RestMethod|Invoke-TroubleshootingPack|Invoke-WebRequest|Invoke-WmiMethod|Invoke-WSManAction|Join-Path|Limit-EventLog|Measure-Command|Measure-Object|Move-Item|Move-ItemProperty|New-Alias|New-AppLockerPolicy|New-CimInstance|New-CimSession|New-CimSessionOption|New-Event|New-EventLog|New-Item|New-ItemProperty|New-JobTrigger|New-Module|New-ModuleManifest|New-Object|New-PSDrive|New-PSSession|New-PSSessionConfigurationFile|New-PSSessionOption|New-PSTransportOption|New-PSWorkflowExecutionOption|New-ScheduledJobOption|New-Service|New-TimeSpan|New-Variable|New-WebServiceProxy|New-WinEvent|New-WSManInstance|New-WSManSessionOption|Out-Default|Out-File|Out-GridView|Out-Host|Out-Null|Out-Printer|Out-String|Pop-Location|Push-Location|Read-Host|Receive-Job|Receive-PSSession|Register-CimIndicationEvent|Register-EngineEvent|Register-ObjectEvent|Register-PSSessionConfiguration|Register-ScheduledJob|Register-WmiEvent|Remove-BitsTransfer|Remove-CimInstance|Remove-CimSession|Remove-Computer|Remove-Event|Remove-EventLog|Remove-Item|Remove-ItemProperty|Remove-Job|Remove-JobTrigger|Remove-Module|Remove-PSBreakpoint|Remove-PSDrive|Remove-PSSession|Remove-PSSnapin|Remove-TypeData|Remove-Variable|Remove-WmiObject|Remove-WSManInstance|Rename-Computer|Rename-Item|Rename-ItemProperty|Reset-ComputerMachinePassword|Resolve-Path|Restart-Computer|Restart-Service|Restore-Computer|Resume-BitsTransfer|Resume-Job|Resume-Service|Save-Help|Select-Object|Select-String|Select-Xml|Send-MailMessage|Set-Acl|Set-Alias|Set-AppLockerPolicy|Set-AuthenticodeSignature|Set-BitsTransfer|Set-CimInstance|Set-Content|Set-Date|Set-ExecutionPolicy|Set-Item|Set-ItemProperty|Set-JobTrigger|Set-Location|Set-PSBreakpoint|Set-PSDebug|Set-PSSessionConfiguration|Set-ScheduledJob|Set-ScheduledJobOption|Set-Service|Set-StrictMode|Set-TraceSource|Set-Variable|Set-WmiInstance|Set-WSManInstance|Set-WSManQuickConfig|Show-Command|Show-ControlPanelItem|Show-EventLog|Sort-Object|Split-Path|Start-BitsTransfer|Start-Job|Start-Process|Start-Service|Start-Sleep|Start-Transaction|Start-Transcript|Stop-Computer|Stop-Job|Stop-Process|Stop-Service|Stop-Transcript|Suspend-BitsTransfer|Suspend-Job|Suspend-Service|Tee-Object|Test-AppLockerPolicy|Test-ComputerSecureChannel|Test-Connection|Test-ModuleManifest|Test-Path|Test-PSSessionConfigurationFile|Test-WSMan|Trace-Command|Unblock-File|Undo-Transaction|Unregister-Event|Unregister-PSSessionConfiguration|Unregister-ScheduledJob|Update-FormatData|Update-Help|Update-List|Update-TypeData|Use-Transaction|Wait-Event|Wait-Job|Wait-Process|Where-Object|Write-Debug|Write-Error|Write-EventLog|Write-Host|Write-Output|Write-Progress|Write-Verbose|Write-Warning)\\b", 
-        "name": "support.function.powershell"
+        "name": "support.function.builtin.powershell"
     },
     "failoverClusters": {
         "comment": "MSFC Cmdlets", 
         "match": "\\b(?i:Add-ClusterDisk|Add-ClusterFileServerRole|Add-ClusterGenericApplicationRole|Add-ClusterGenericScriptRole|Add-ClusterGenericServiceRole|Add-ClusterGroup|Add-ClusterNode|Add-ClusterPrintServerRole|Add-ClusterResource|Add-ClusterResourceDependency|Add-ClusterResourceType|Add-ClusterServerRole|Add-ClusterSharedVolume|Add-ClusterVirtualMachineRole|Block-ClusterAccess|Clear-ClusterDiskReservation|Clear-ClusterNode|Get-Cluster|Get-ClusterAccess|Get-ClusterAvailableDisk|Get-ClusterGroup|Get-ClusterLog|Get-ClusterNetwork|Get-ClusterNetworkInterface|Get-ClusterNode|Get-ClusterOwnerNode|Get-ClusterParameter|Get-ClusterQuorum|Get-ClusterResource|Get-ClusterResourceDependency|Get-ClusterResourceDependencyReport|Get-ClusterResourceType|Get-ClusterSharedVolume|Grant-ClusterAccess|Move-ClusterGroup|Move-ClusterResource|Move-ClusterSharedVolume|Move-ClusterVirtualMachineRole|New-Cluster|Remove-Cluster|Remove-ClusterAccess|Remove-ClusterGroup|Remove-ClusterNode|Remove-ClusterResource|Remove-ClusterResourceDependency|Remove-ClusterResourceType|Remove-ClusterSharedVolume|Repair-ClusterSharedVolume|Resume-ClusterNode|Resume-ClusterResource|Set-ClusterLog|Set-ClusterOwnerNode|Set-ClusterParameter|Set-ClusterQuorum|Set-ClusterResourceDependency|Start-Cluster|Start-ClusterGroup|Start-ClusterNode|Start-ClusterResource|Stop-Cluster|Stop-ClusterGroup|Stop-ClusterNode|Stop-ClusterResource|Suspend-ClusterNode|Suspend-ClusterResource|Test-Cluster|Test-ClusterResourceFailure|Update-ClusterIPResource|Update-ClusterVirtualMachineConfiguration)\\b", 
-        "name": "support.function.failovercluster"
+        "name": "support.function.failovercluster.powershell"
     },
     "networkLoadBalancingClusters": {
         "comment": "NLB Cmdlets", 
         "match": "\\b(?i:Add-NlbClusterNode|Add-NlbClusterNodeDip|Add-NlbClusterPortRule|Add-NlbClusterVip|Disable-NlbClusterPortRule|Enable-NlbClusterPortRule|Get-NlbCluster|Get-NlbClusterDriverInfo|Get-NlbClusterNode|Get-NlbClusterNodeDip|Get-NlbClusterNodeNetworkInterface|Get-NlbClusterPortRule|Get-NlbClusterVip|New-NlbCluster|New-NlbClusterIpv6Address|Remove-NlbCluster|Remove-NlbClusterNode|Remove-NlbClusterNodeDip|Remove-NlbClusterPortRule|Remove-NlbClusterVip|Resume-NlbCluster|Resume-NlbClusterNode|Set-NlbCluster|Set-NlbClusterNode|Set-NlbClusterNodeDip|Set-NlbClusterPortRule|Set-NlbClusterPortRuleNodeHandlingPriority|Set-NlbClusterPortRuleNodeWeight|Set-NlbClusterVip|Start-NlbCluster|Start-NlbClusterNode|Stop-NlbCluster|Stop-NlbClusterNode|Suspend-NlbCluster|Suspend-NlbClusterNode)\\b", 
-        "name": "support.function.nlbcluster"
+        "name": "support.function.nlbcluster.powershell"
     },
     "poshGit": {
         "comment": "Github Cmdlets", 
         "match": "\\b(?i:Add-SshKey|Enable-GitColors|Get-AliasPattern|Get-GitDirectory|Get-GitStatus|Invoke-NullCoalescing|Start-SshAgent|Stop-SshAgent|TabExpansion|tgit|Update-AllBranches|Write-GitStatus|Write-Prompt|Write-VcsStatus)\\b", 
-        "name": "support.function.github"
+        "name": "support.function.github.powershell"
     },
     "powerCLI": {
         "comment": "VMWare PowerCLI Cmdlets", 
         "match": "\\b(?i:Add-DeployRule|Add-EsxSoftwareDepot|Add-EsxSoftwarePackage|Add-PassthroughDevice|Add-VMHost|Add-VmHostNtpServer|Apply-DrsRecommendation|Apply-ESXImageProfile|Apply-VMHostProfile|Compare-EsxImageProfile|Connect-VIServer|Copy-DatastoreItem|Copy-DeployRule|Copy-HardDisk|Copy-VMGuestFile|Disconnect-VIServer|Dismount-Tools|Export-EsxImageProfile|Export-VApp|Export-VMHostProfile|Format-VMHostDiskPartition|Get-AdvancedSetting|Get-AlarmAction|Get-AlarmActionTrigger|Get-AlarmDefinition|Get-Annotation|Get-CDDrive|Get-Cluster|Get-CustomAttribute|Get-Datacenter|Get-Datastore|Get-DatastoreCluster|Get-DeployRule|Get-DeployRuleSet|Get-DrsRecommendation|Get-DrsRule|Get-ErrorReport|Get-EsxCli|Get-EsxImageProfile|Get-EsxSoftwareChannel|Get-EsxSoftwarePackage|Get-EsxTop|Get-FloppyDrive|Get-Folder|Get-HAPrimaryVMHost|Get-HardDisk|Get-Inventory|Get-IScsiHbaTarget|Get-LicenseDataManager|Get-Log|Get-LogType|Get-NetworkAdapter|Get-NicTeamingPolicy|Get-OSCustomizationNicMapping|Get-OSCustomizationSpec|Get-PassthroughDevice|Get-PowerCLIConfiguration|Get-PowerCLIVersion|Get-ResourcePool|Get-ScsiController|Get-ScsiLun|Get-ScsiLunPath|Get-Snapshot|Get-Stat|Get-StatInterval|Get-StatType|Get-Task|Get-Template|Get-UsbDevice|Get-VApp|Get-VIAccount|Get-VICredentialStoreItem|Get-VIEvent|Get-View|Get-VIObjectByVIView|Get-VIPermission|Get-VIPrivilege|Get-VIProperty|Get-VIRole|Get-VirtualPortGroup|Get-VirtualSwitch|Get-VM|Get-VMGuest|Get-VMGuestNetworkInterface|Get-VMGuestRoute|Get-VMHost|Get-VMHostAccount|Get-VMHostAdvancedConfiguration|Get-VMHostAttributes|Get-VMHostAuthentication|Get-VMHostAvailableTimeZone|Get-VMHostDiagnosticPartition|Get-VMHostDisk|Get-VMHostDiskPartition|Get-VMHostFirewallDefaultPolicy|Get-VMHostFirewallException|Get-VMHostFirmware|Get-VMHostHba|Get-VMHostImageProfile|Get-VMHostMatchingRules|Get-VMHostModule|Get-VMHostNetwork|Get-VMHostNetworkAdapter|Get-VMHostNtpServer|Get-VMHostPatch|Get-VMHostProfile|Get-VMHostProfileRequiredInput|Get-VMHostRoute|Get-VMHostService|Get-VMHostSnmp|Get-VMHostStartPolicy|Get-VMHostStorage|Get-VMHostSysLogServer|Get-VMQuestion|Get-VMResourceConfiguration|Get-VMStartPolicy|Import-VApp|Import-VMHostProfile|Install-VMHostPatch|Invoke-VMScript|Mount-Tools|Move-Cluster|Move-Datacenter|Move-Folder|Move-Inventory|Move-ResourcePool|Move-Template|Move-VApp|Move-VM|Move-VMHost|New-AdvancedSetting|New-AlarmAction|New-AlarmActionTrigger|New-CDDrive|New-Cluster|New-CustomAttribute|New-CustomField|New-Datacenter|New-Datastore|New-DeployRule|New-DrsRule|New-EsxImageProfile|New-FloppyDrive|New-Folder|New-HardDisk|New-IScsiHbaTarget|New-NetworkAdapter|New-OSCustomizationNicMapping|New-OSCustomizationSpec|New-ResourcePool|New-ScsiController|New-Snapshot|New-StatInterval|New-Template|New-VApp|New-VICredentialStoreItem|New-VIPermission|New-VIProperty|New-VIRole|New-VirtualPortGroup|New-VirtualSwitch|New-VM|New-VMGuestRoute|New-VMHostAccount|New-VMHostNetworkAdapter|New-VMHostProfile|New-VMHostRoute|Remove-AdvancedSetting|Remove-AlarmAction|Remove-AlarmActionTrigger|Remove-CDDrive|Remove-Cluster|Remove-CustomAttribute|Remove-CustomField|Remove-Datacenter|Remove-Datastore|Remove-DeployRule|Remove-DrsRule|Remove-EsxSoftwareDepot|Remove-EsxSoftwarePackage|Remove-FloppyDrive|Remove-Folder|Remove-HardDisk|Remove-Inventory|Remove-IScsiHbaTarget|Remove-NetworkAdapter|Remove-OSCustomizationNicMapping|Remove-OSCustomizationSpec|Remove-PassthroughDevice|Remove-ResourcePool|Remove-Snapshot|Remove-StatInterval|Remove-Template|Remove-UsbDevice|Remove-VApp|Remove-VICredentialStoreItem|Remove-VIPermission|Remove-VIProperty|Remove-VIRole|Remove-VirtualPortGroup|Remove-VirtualSwitch|Remove-VM|Remove-VMGuestRoute|Remove-VMHost|Remove-VMHostAccount|Remove-VMHostNetworkAdapter|Remove-VMHostNtpServer|Remove-VMHostProfile|Remove-VMHostRoute|Repair-DeployImageCache|Repair-DeployRuleSetCompliance|Restart-VM|Restart-VMGuest|Restart-VMHost|Restart-VMHostService|Set-AdvancedSetting|Set-AlarmDefinition|Set-Annotation|Set-CDDrive|Set-Cluster|Set-CustomAttribute|Set-CustomField|Set-Datacenter|Set-Datastore|Set-DeployRule|Set-DeployRuleSet|Set-DrsRule|Set-EsxImageProfile|Set-FloppyDrive|Set-Folder|Set-HardDisk|Set-IScsiHbaTarget|Set-NetworkAdapter|Set-NicTeamingPolicy|Set-OSCustomizationNicMapping|Set-OSCustomizationSpec|Set-PowerCLIConfiguration|Set-ResourcePool|Set-ScsiController|Set-ScsiLun|Set-ScsiLunPath|Set-Snapshot|Set-StatInterval|Set-Template|Set-VApp|Set-VIPermission|Set-VIRole|Set-VirtualPortGroup|Set-VirtualSwitch|Set-VM|Set-VMGuestNetworkInterface|Set-VMHost|Set-VMHostAccount|Set-VMHostAdvancedConfiguration|Set-VMHostAuthentication|Set-VMHostDiagnosticPartition|Set-VMHostFirewallDefaultPolicy|Set-VMHostFirewallException|Set-VMHostFirmware|Set-VMHostHba|Set-VMHostModule|Set-VMHostNetwork|Set-VMHostNetworkAdapter|Set-VMHostProfile|Set-VMHostRoute|Set-VMHostService|Set-VMHostSnmp|Set-VMHostStartPolicy|Set-VMHostStorage|Set-VMHostSysLogServer|Set-VMQuestion|Set-VMResourceConfiguration|Set-VMStartPolicy|Shutdown-VMGuest|Start-VApp|Start-VM|Start-VMHost|Start-VMHostService|Stop-Task|Stop-VApp|Stop-VM|Stop-VMHost|Stop-VMHostService|Suspend-VM|Suspend-VMGuest|Suspend-VMHost|Switch-ActiveDeployRuleSet|Test-DeployRuleSetCompliance|Test-VMHostProfileCompliance|Test-VMHostSnmp|Update-Tools|Wait-Task|Wait-Tools)\\b", 
-        "name": "support.function.powercli"
+        "name": "support.function.powercli.powershell"
     },
     "activeDirectory": {
         "comment": "Active Directoy Cmdlets", 
         "match": "\\b(?i:Add-ADComputerServiceAccount|Add-ADDomainControllerPasswordReplicationPolicy|Add-ADFineGrainedPasswordPolicySubject|Add-ADGroupMember|Add-ADPrincipalGroupMembership|Clear-ADAccountExpiration|Disable-ADAccount|Disable-ADOptionalFeature|Enable-ADAccount|Enable-ADOptionalFeature|Get-ADAccountAuthorizationGroup|Get-ADAccountResultantPasswordReplicationPolicy|Get-ADComputer|Get-ADComputerServiceAccount|Get-ADDefaultDomainPasswordPolicy|Get-ADDomain|Get-ADDomainController|Get-ADDomainControllerPasswordReplicationPolicy|Get-ADDomainControllerPasswordReplicationPolicyUsage|Get-ADFineGrainedPasswordPolicy|Get-ADFineGrainedPasswordPolicySubject|Get-ADForest|Get-ADGroup|Get-ADGroupMember|Get-ADObject|Get-ADOptionalFeature|Get-ADOrganizationalUnit|Get-ADPrincipalGroupMembership|Get-ADRootDSE|Get-ADServiceAccount|Get-ADUser|Get-ADUserResultantPasswordPolicy|Install-ADServiceAccount|Move-ADDirectoryServer|Move-ADDirectoryServerOperationMasterRole|Move-ADObject|New-ADComputer|New-ADFineGrainedPasswordPolicy|New-ADGroup|New-ADObject|New-ADOrganizationalUnit|New-ADServiceAccount|New-ADUser|Remove-ADComputer|Remove-ADComputerServiceAccount|Remove-ADDomainControllerPasswordReplicationPolicy|Remove-ADFineGrainedPasswordPolicy|Remove-ADFineGrainedPasswordPolicySubject|Remove-ADGroup|Remove-ADGroupMember|Remove-ADObject|Remove-ADOrganizationalUnit|Remove-ADPrincipalGroupMembership|Remove-ADServiceAccount|Remove-ADUser|Rename-ADObject|Reset-ADServiceAccountPassword|Restore-ADObject|Search-ADAccount|Set-ADAccountControl|Set-ADAccountExpiration|Set-ADAccountPassword|Set-ADComputer|Set-ADDefaultDomainPasswordPolicy|Set-ADDomain|Set-ADDomainMode|Set-ADFineGrainedPasswordPolicy|Set-ADForest|Set-ADForestMode|Set-ADGroup|Set-ADObject|Set-ADOrganizationalUnit|Set-ADServiceAccount|Set-ADUser|Uninstall-ADServiceAccount|Unlock-ADAccount)\\b", 
-        "name": "support.function.activedirectory"
+        "name": "support.function.activedirectory.powershell"
     },
     "groupPolicy": {
         "comment": "Group Policy Cmdlets", 
         "match": "\\b(?i:Backup-GPO|Copy-GPO|Get-GPInheritance|Get-GPO|Get-GPOReport|Get-GPPermissions|Get-GPPrefRegistryValue|Get-GPRegistryValue|Get-GPResultantSetOfPolicy|Get-GPStarterGPO|Import-GPO|New-GPLink|New-GPO|New-GPStarterGPO|Remove-GPLink|Remove-GPO|Remove-GPPrefRegistryValue|Remove-GPRegistryValue|Rename-GPO|Restore-GPO|Set-GPInheritance|Set-GPLink|Set-GPPermissions|Set-GPPrefRegistryValue|Set-GPRegistryValue)\\b", 
-        "name": "support.function.grouppolicy"
+        "name": "support.function.grouppolicy.powershell"
     },
     "smartFunctionMatch": {
         "comment": "Using the approved verb list in PowerShell to dynamically match functions and cmdlets", 
         "match": "\\b(?i:Add|Clear|Close|Copy|Enter|Exit|Find|Format|Get|Hide|Join|Lock|Move|New|Open|Optimize|Pop|Push|Redo|Remove|Rename|Reset|Resize|Search|Select|Set|Show|Skip|Split|Step|Switch|Undo|Unlock|Watch|Backup|Checkpoint|Compare|Compress|Convert|ConvertFrom|ConvertTo|Dismount|Edit|Expand|Export|Group|Import|Initialize|Limit|Merge|Mount|Out|Publish|Restore|Save|Sync|Unpublish|Update|Approve|Assert|Complete|Confirm|Deny|Disable|Enable|Install|Invoke|Register|Request|Restart|Resume|Start|Stop|Submit|Suspend|Uninstall|Unregister|Wait|Debug|Measure|Ping|Repair|Resolve|Test|Trace|Connect|Disconnect|Read|Receive|Send|Write|Block|Grant|Protect|Revoke|Unblock|Unprotect|Use)-(?i:\\w+)\\b", 
-        "name": "support.function.generic"
+        "name": "support.function.generic.powershell"
     }
   },
   "uuid": "fb7f7780-1ecf-4190-a8b1-323da1a0e780"
