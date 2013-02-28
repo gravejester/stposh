@@ -3,7 +3,10 @@ stposh
 
 Add PowerShell support to Sublime Text 2
 
-NEW! Added 11 themes and one dark theme template.
+UPDATE 28.02.2013: Added the posibility of using highlighing in line comments (if the theme supports it),
+by using '!!!' as highlighting keyword. Example: "# This is !!!highlighted"
+
+Includes 11 themes (some are still WIP) and one dark theme template.
 
 Supports syntax highlighting of native PowerShell 3 cmdlets and language, as well as added cmdlets for:
 
