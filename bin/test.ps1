@@ -1,4 +1,7 @@
-# testing powershell syntax highlighting
+# testing powershell syntax !!!highlighting
+#>>Write-Host "Something"
+ #>> Write-Host "Something else"
+# comment before #>> Write-Host "No way!"
 
 <#
 	Testing strings
@@ -89,6 +92,7 @@ $variable = "This string is $($variable.length) characters long"
 $hereString = @"
 Here strings can also 'contain' $variables
 as well as sub ""expressions"" `n(like this one: $($var.count)!)
+$($var.count)
 <html>
 <b>HTML???? really?</b>
 </html>
@@ -236,7 +240,7 @@ function My_Function {
 "This string contains a sub expression: $($var.count)"
 'This string contains a sub expression: $($var.count)'
 
-"Complex sub expressions. $((Get-Date - ($var.date)))"
+"Complex sub expressions. $(Write-Output (Get-Date - ($var.date)))"
 
 if ($results){
 		break

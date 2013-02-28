@@ -12,12 +12,21 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>begin</key>
+			<string>#</string>
 			<key>comment</key>
 			<string>Line Comments</string>
-			<key>match</key>
-			<string>(#).*$\n?</string>
+			<key>end</key>
+			<string>\n</string>
 			<key>name</key>
 			<string>comment.line.number-sign.powershell</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#commentHighlights</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -191,6 +200,8 @@
 		</dict>
 		<key>advancedFunctionsParameter</key>
 		<dict>
+			<key>comment</key>
+			<string>Parameters supported by PowerShell advanced functions. Example: [Parameter(Position = 0, Mandatory = $true)]</string>
 			<key>match</key>
 			<string>\b(?i:ConfirmImpact|DefaultParameterSetName|HelpURI|SupportsPaging|SupportsShouldProcess|PositionalBinding|Mandatory|Position|ParameterSetName|ValueFromPipeline|ValueFromPipelinebyPropertyName|ValueFromRemainingArguments|HelpMessage)\b</string>
 			<key>name</key>
@@ -283,6 +294,15 @@
 				</dict>
 			</array>
 		</dict>
+		<key>commentHighlights</key>
+		<dict>
+			<key>comment</key>
+			<string>Highlighting comments</string>
+			<key>match</key>
+			<string>!!!.+</string>
+			<key>name</key>
+			<string>comments.line.highlights</string>
+		</dict>
 		<key>comparisonOperator</key>
 		<dict>
 			<key>comment</key>
@@ -335,7 +355,7 @@
 			<key>begin</key>
 			<string>@"$</string>
 			<key>comment</key>
-			<string>Double Quoted Here String</string>
+			<string>Double Quoted Here String.</string>
 			<key>end</key>
 			<string>^"@$</string>
 			<key>name</key>
@@ -369,7 +389,7 @@
 			<key>begin</key>
 			<string>@'$</string>
 			<key>comment</key>
-			<string>Double Quoted Here String</string>
+			<string>Single Quoted Here String</string>
 			<key>end</key>
 			<string>^'@$</string>
 			<key>name</key>
@@ -540,7 +560,7 @@
 			<key>begin</key>
 			<string>\{</string>
 			<key>comment</key>
-			<string>ScriptBlock</string>
+			<string>ScriptBlock. Example: [ScriptBlock]$code = {Do something; Do something else}</string>
 			<key>end</key>
 			<string>\}</string>
 			<key>name</key>
@@ -645,7 +665,7 @@
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>Sub expression</string>
+			<string>Sub expression. Example: $($variable.property)</string>
 			<key>contentName</key>
 			<string>meta.subexpression.powershell</string>
 			<key>end</key>
@@ -662,7 +682,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#self</string>
+					<string>$self</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -707,7 +727,7 @@
 			<key>begin</key>
 			<string>(?&lt;=\[)(?i:Alias|AllowEmptyCollection|AllowEmptyString|AllowNull|Array|Bool|Byte|Char|CmdletBinding|DateTime|Decimal|ADSI|ADSISearcher|Double|Float|Single|GUID|HashTable|Int|Int32|Int16|Long|Int64|WMIClass|WMI|WMISearcher|CIMInstance|NullString|OutputType|Parameter|PSCredential|PSDefaultValue|PSListModifier|PSObject|PSCustomObject|PSPrimitiveDictionary|Ref|PSTypeNameAttribute|Regex|SByte|String|SupportsWildcards|Switch|CultureInfo|IPAddress|MailAddress|BigInt|SecureString|TimeSpan|UInt16|UInt32|UInt64|URI|ValidateCount|ValidateLength|ValidateNotNullorEmpty|ValidatePattern|ValidateRange|ValidateScript|ValidateSet|Version|void|XML|ScriptBlock|Type|PSModuleInfo|Powershell|RunspaceFactory|Runspace)</string>
 			<key>comment</key>
-			<string>.NET Type Accelerators supported in PowerShell version 3</string>
+			<string>.NET Type Accelerators supported in PowerShell version 3. Example: [WMIClass]</string>
 			<key>end</key>
 			<string>(?&gt;)(?=\](?!\]))</string>
 			<key>name</key>
@@ -844,7 +864,7 @@
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>String Formatting Variables</string>
+			<string>String Formatting Variables.</string>
 			<key>match</key>
 			<string>(\{)(\d+)(:?)([NnDdCcPpXx]?)(\d*)(\})</string>
 		</dict>

@@ -1,0 +1,230 @@
+{
+    "author": "\u00d8yvind Kallstad", 
+    "name": "stposh-rust", 
+    "settings": [
+        {
+            "settings": {
+                "background": "#181617", 
+                "bracketContentsForeground": "#ffffffff", 
+                "bracketContentsOptions": "foreground", 
+                "bracketsForeground": "#ffffffff", 
+                "bracketsOptions": "foreground", 
+                "caret": "#F8F8F0", 
+                "findHighlight": "#FFE792", 
+                "findHighlightForeground": "#000000", 
+                "foreground": "#F5F5F5", 
+                "invisibles": "#3B3A32", 
+                "lineHighlight": "#acacac", 
+                "selection": "#49483E", 
+                "selectionBorder": "#222218", 
+                "tagsOptions": "stippled_underline"
+            }
+        }, 
+        {
+            "name": "Comment Highlighting", 
+            "scope": "comments.line.highlights", 
+            "settings": {
+                "fontStyle": "italic", 
+                "foreground": "#A58685",
+                "background": "#683635"
+            }
+        }, 
+        {
+            "name": "Comments", 
+            "scope": "comment", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#725554"
+            }
+        }, 
+        {
+            "name": "Comment-based help: Keyword", 
+            "scope": "keyword.operator.documentation", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#a7a7a7"
+            }
+        }, 
+        {
+            "name": "Comment-based help: Variable", 
+            "scope": "keyword.operator2.documentation", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#858585"
+            }
+        }, 
+        {
+            "name": "Comment-based help: beginning dot", 
+            "scope": "constant.string.documentation.powershell", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#e1e1e1"
+            }
+        }, 
+        {
+            "name": "Function Names", 
+            "scope": "entity.name.function", 
+            "settings": {
+                "fontStyle": "italic", 
+                "foreground": "#D66858"
+            }
+        }, 
+        {
+            "name": ".NET classes", 
+            "scope": "support.class.net", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#89C50E"
+            }
+        }, 
+        {
+            "name": "Language Operators", 
+            "scope": "keyword.operator", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#AB5252"
+            }
+        }, 
+        {
+            "name": "Reserved Words", 
+            "scope": "keyword.control", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#BB7373"
+            }
+        }, 
+        {
+            "name": "Language specific Constants (advanced functions parameter, type accelerators)", 
+            "scope": "constant.language", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#E0D9E1"
+            }
+        }, 
+        {
+            "name": "Strings", 
+            "scope": "string", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#668284"
+            }
+        }, 
+        {
+            "name": "Escape characters", 
+            "scope": "constant.character.escape", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#857d25"
+            }
+        }, 
+        {
+            "name": "Misc keywords", 
+            "scope": "keyword.other", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#6fbf60"
+            }
+        }, 
+        {
+            "name": "Variable Operator", 
+            "scope": "keyword.operator.variable", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#AB5252"
+            }
+        },
+        {
+            "name": "Variable scope", 
+            "scope": "storage.modifier", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#668284"
+            }
+        }, 
+        {
+            "name": "Variable Name", 
+            "scope": "variable.other", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#AB5252"
+            }
+        }, 
+        {
+            "name": "Built-in Variable", 
+            "scope": "variable.language.powershell", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#BADBB7"
+            }
+        }, 
+        {
+            "name": "Numeric constants", 
+            "scope": "constant.numeric", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#e899e0"
+            }
+        }, 
+        {
+            "name": "Parameters", 
+            "scope": "variable.parameter", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#53777A"
+            }
+        }, 
+        {
+            "name": "Cmdlets / built-in functions", 
+            "scope": "support.function", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#B9D7D9"
+            }
+        },
+        {
+            "name": "diff.header", 
+            "scope": "meta.diff, meta.diff.header", 
+            "settings": {
+                "foreground": "#75715E"
+            }
+        }, 
+        {
+            "name": "diff.deleted", 
+            "scope": "markup.deleted", 
+            "settings": {
+                "foreground": "#F92672"
+            }
+        }, 
+        {
+            "name": "diff.inserted", 
+            "scope": "markup.inserted", 
+            "settings": {
+                "foreground": "#A6E22E"
+            }
+        }, 
+        {
+            "name": "diff.changed", 
+            "scope": "markup.changed", 
+            "settings": {
+                "foreground": "#E6DB74"
+            }
+        },
+        {
+            "name": "Tag name", 
+            "scope": "entity.name.tag", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#F92672"
+            }
+        },
+        {
+            "name": "Tag attribute", 
+            "scope": "entity.other.attribute-name", 
+            "settings": {
+                "fontStyle": "", 
+                "foreground": "#A6E22E"
+            }
+        }
+    ], 
+    "uuid": "D8D5E82E-3D5B-46B5-B38E-8C841C21347D"
+}

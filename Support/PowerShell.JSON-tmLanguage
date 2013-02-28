@@ -2,10 +2,14 @@
   "scopeName": "source.powershell",
   "fileTypes": ["ps1","psm1"],
   "patterns": [
-		{
+    {
         "comment": "Line Comments", 
-        "match": "(#).*$\\n?", 
-        "name": "comment.line.number-sign.powershell"
+        "begin": "#",
+        "end": "\\n",
+        "name": "comment.line.number-sign.powershell",
+        "patterns": [
+          { "include": "#commentHighlights" }
+        ]
     },
     {
     	"comment": "Block Comments",
@@ -99,12 +103,13 @@
         "name": "keyword.control.powershell"
   	},
   	"advancedFunctionsParameter": {
+        "comment": "Parameters supported by PowerShell advanced functions. Example: [Parameter(Position = 0, Mandatory = $true)]",
         "match": "\\b(?i:ConfirmImpact|DefaultParameterSetName|HelpURI|SupportsPaging|SupportsShouldProcess|PositionalBinding|Mandatory|Position|ParameterSetName|ValueFromPipeline|ValueFromPipelinebyPropertyName|ValueFromRemainingArguments|HelpMessage)\\b", 
         "name": "variable.parameter.powershell"
     },
     "typeAccelerator": {
+        "comment": ".NET Type Accelerators supported in PowerShell version 3. Example: [WMIClass]", 
         "begin": "(?<=\\[)(?i:Alias|AllowEmptyCollection|AllowEmptyString|AllowNull|Array|Bool|Byte|Char|CmdletBinding|DateTime|Decimal|ADSI|ADSISearcher|Double|Float|Single|GUID|HashTable|Int|Int32|Int16|Long|Int64|WMIClass|WMI|WMISearcher|CIMInstance|NullString|OutputType|Parameter|PSCredential|PSDefaultValue|PSListModifier|PSObject|PSCustomObject|PSPrimitiveDictionary|Ref|PSTypeNameAttribute|Regex|SByte|String|SupportsWildcards|Switch|CultureInfo|IPAddress|MailAddress|BigInt|SecureString|TimeSpan|UInt16|UInt32|UInt64|URI|ValidateCount|ValidateLength|ValidateNotNullorEmpty|ValidatePattern|ValidateRange|ValidateScript|ValidateSet|Version|void|XML|ScriptBlock|Type|PSModuleInfo|Powershell|RunspaceFactory|Runspace)", 
-        "comment": ".NET Type Accelerators supported in PowerShell version 3", 
         "end": "(?>)(?=\\](?!\\]))", 
         "name": "constant.language.net.powershell", 
         "patterns": [
@@ -116,7 +121,7 @@
         ]
     },
   	"subExpression": {
-  		"comment": "Sub expression",
+  		"comment": "Sub expression. Example: $($variable.property)",
   		"begin": "\\$\\(",
   		"beginCaptures": {
   			"0": { "name": "keyword.operator.subexpression.powershell"	}
@@ -127,7 +132,7 @@
   		},
   		"contentName": "meta.subexpression.powershell",
   		"patterns": [
-  			{ "include": "#self" },
+  			{ "include": "$self" },
   			{ "include": "#variable" },
   			{ "include": "#cmdlet" },
   			{ "include": "#numericConstant"	},
@@ -140,7 +145,7 @@
   		]
   	},
   	"scriptblock": {
-  		"comment": "ScriptBlock",
+  		"comment": "ScriptBlock. Example: [ScriptBlock]$code = {Do something; Do something else}",
         "begin": "\\{", 
         "end": "\\}", 
         "name": "meta.scriptblock.powershell", 
@@ -196,7 +201,7 @@
   		
   	},
   	"hereStringDoubleQuoted": {
-  		"comment": "Double Quoted Here String",
+  		"comment": "Double Quoted Here String.",
   		"begin": "@\"$",
   		"end": "^\"@$",
   		"name": "string.quoted.double.here-doc.powershell",
@@ -209,13 +214,13 @@
         ]
   	},
   	"hereStringSingleQuoted": {
-  		"comment": "Double Quoted Here String",
+  		"comment": "Single Quoted Here String",
   		"begin": "@'$",
   		"end": "^'@$",
   		"name": "string.quoted.single.here-doc.powershell"
   	},
   	"variableStringFormatting": {
-  		"comment": "String Formatting Variables",
+  		"comment": "String Formatting Variables.",
   		"match": "(\\{)(\\d+)(:?)([NnDdCcPpXx]?)(\\d*)(\\})",
   		"captures": {
   			"1": { "name": "keyword.other.powershell" },
@@ -298,6 +303,11 @@
         "comment": "General parameter matching", 
         "match": "(?<=\\s)-(\\w+)", 
         "name": "variable.parameter.powershell"
+    },
+    "commentHighlights": {
+      "comment": "Highlighting comments",
+      "match": "!!!.+",
+      "name": "comments.line.highlights"
     },
     "commentEmbeddedDocs": {
         "comment": "Comment based help", 
