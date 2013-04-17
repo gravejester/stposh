@@ -7,7 +7,7 @@
 	<key>scope</key>
 	<string>source.powershell</string>
 	<key>settings</key>
-	<dict>
+	<dict> 
 		<key>shellVariables</key>
 		<array>
 			<dict>
