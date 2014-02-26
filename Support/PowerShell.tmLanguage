@@ -276,7 +276,7 @@
 		<key>numericFormatting</key>
 		<dict>
 			<key>match</key>
-			<string>((:[NnCcDdPpXx])(\d*))</string>
+			<string>((?&lt;!:)(:[NnCcDdPpXx])(\d*))</string>
 			<key>name</key>
 			<string>constant.numeric.powershell</string>
 		</dict>
