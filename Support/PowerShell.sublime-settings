@@ -1,34 +1,35 @@
 {
-	// Disables horizontal scrolling if enabled.
-    // May be set to true, false, or "auto", where it will be disabled for
-    // source code, and otherwise enabled.
-    "word_wrap": "auto",
+    // Hides the fold buttons unless the mouse is over the gutter
+    "fade_fold_buttons": false,
 
-	// Set to true to insert spaces when tab is pressed
-    "translate_tabs_to_spaces": true,
+    // If enabled, will highlight any line with a caret
+    "highlight_line": false,
 
-	 // When enabled, pressing tab will insert the best matching completion.
-    // When disabled, tab will only trigger snippets or insert a tab.
-    // Shift+tab can be used to insert an explicit tab when tab_completion is
-    // enabled.
-    "tab_completion": true,
 
-	// Enable auto complete to be triggered automatically when typing.
-    "auto_complete": true,
+    // Set to true to removing trailing white space on save
+    "trim_trailing_white_space_on_save": true,
 
-	// Controls what scopes auto complete will be triggered in
-    "auto_complete_selector": "source - (comment, string.quoted.single)",
-
-	// By default, auto complete will commit the current completion on enter.
+    // By default, auto complete will commit the current completion on enter.
     // This setting can be used to make it complete on tab instead.
     // Completing on tab is generally a superior option, as it removes
     // ambiguity between committing the completion and inserting a newline.
     "auto_complete_commit_on_tab": false,
 
-	// Controls if auto complete is shown when snippet fields are active.
+    // Controls if auto complete is shown when snippet fields are active.
     // Only relevant if auto_complete_commit_on_tab is true.
     "auto_complete_with_fields": false,
 
-    // Characters that are considered to separate words
-    "word_separators": "./\\()\"'-:,.;<>~!@#$%^&*|+=[]{}`~?"
+    // By default, shift+tab will only unindent if the selection spans
+    // multiple lines. When pressing shift+tab at other times, it'll insert a
+    // tab character - this allows tabs to be inserted when tab_completion is
+    // enabled. Set this to true to make shift+tab always unindent, instead of
+    // inserting tabs.
+    "shift_tab_unindent": false,
+
+    // Makes tabs with modified files more visible
+    "highlight_modified_tabs": true,
+
+    // List any packages to ignore here. When removing entries from this list,
+    // a restart may be required if the package contains plugins.
+    "ignored_packages": ["Vintage"]
 }

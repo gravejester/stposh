@@ -3,45 +3,11 @@ stposh
 
 Add PowerShell support to Sublime Text 2
 
-UPDATE 28.02.2013: Added the posibility of using highlighing in line comments (if the theme supports it),
-by using '!!!' as highlighting keyword. Example: "# This is !!!highlighted"
-
-Includes 11 themes (some are still WIP) and one dark theme template.
-
-Supports syntax highlighting of native PowerShell 3 cmdlets and language, as well as added cmdlets for:
-
-- Microsoft Failover Cluster
-- Microsoft Network Load Balancing Cluster (NLB)
-- poshGit
-- VMWare PowerCLI
-- Active Directory
-- Group Policy
-
-Also included are full command completions of native PowerShell 3 cmdlets as well as the following snippets:
-
-- Begin Block
-- Process Block
-- End Block
-- Comment Block
-- Comment Based Help
-- CmdletBinding
-- Function - simple
-- Function - advanced
-- Parameter
-- Regex validate: URL
-- foreach
-- for
-- if
-- if-else
-- elseif
-- else
-- do-until
-- do-while
-- switch
-- try-catch
-- try-catch-finally
-- while
-
-User-defined functions will populate symbol list.
-
-NOTE! This work is partly based on the existing PowerShell 2 addon for Sublime Text 2 by Guillermo López-Anglada (https://github.com/SublimeText/PowerShell)
+Features:
+- Syntax highlighting of PowerShell code with smart matching of commands based on the approved verb list by Microsoft
+- Recognizes function declarations and adds them to the symbols list, so they can be quickly navigated to by using Goto > Symbol (Ctrl + R)
+- Easy toggle line comments and block comments with preservation of indentations. Thanks to Nathan M!
+- Quickly mark section of code as debug or test, by using the keyword DEBUG! in a comment
+- Includes a custom version of the Monokai color scheme. The only change is a slightly darker default color and setting color to the variable scope (white)
+- Full command completions of native PowerShell commands
+- Includes a library of 21 snippets

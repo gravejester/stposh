@@ -1,6 +1,6 @@
 {
 	"scope": "source.powershell",
-	"completions": 
+	"completions":
 	[
 		"ConfirmImpact",
 		"DefaultParameterSetName",
@@ -14,8 +14,8 @@
 		{ "trigger": "ValueFromPipeline", "contents": "ValueFromPipeline = $1"},
 		{ "trigger": "ValueFromPipelinebyPropertyName", "contents": "ValueFromPipelinebyPropertyName = $1"},
 		"ValueFromRemainingArguments",
-		"HelpMessage",
-		"Alias",
+		{ "trigger": "HelpMessage", "contents": "HelpMessage = '$1'"},
+		{ "trigger": "Alias", "contents": "[Alias('$1')]"},
 		"AllowNull",
 		"AllowEmptyString",
 		"AllowEmptyCollection",
@@ -326,7 +326,7 @@
 		"Wait-Process",
 		{ "trigger": "Where-Object", "contents": "Where-Object {$1} $2"},
 		"Write-Debug",
-		"Write-Error",
+		{ "trigger": "Write-Error", "contents": "Write-Error $1"},
 		"Write-EventLog",
 		{ "trigger": "Write-Host", "contents": "Write-Host $1"},
 		{ "trigger": "Write-Output", "contents": "Write-Output $1"},
