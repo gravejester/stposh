@@ -1,9 +1,11 @@
 <snippet>
-	<content><![CDATA[[Parameter($1)]
-[${2:type}]\$${3:parameter}$4]]></content>
+	<content><![CDATA[param (
+	[Parameter($1)]
+	[${2:type}]\$${3:parameter}$4
+)$5]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>parameter</tabTrigger>
+	<tabTrigger>param</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>meta.scriptblock.powershell</scope>
-	<description>[Parameter()]</description>
+	<description>param()</description>
 </snippet>
