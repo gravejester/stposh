@@ -10,4 +10,4 @@ Features:
 - Quickly mark section of code as debug or test, by using the keyword DEBUG! in a comment
 - Includes a custom version of the Monokai color scheme. The only change is a slightly darker default color and setting color to the variable scope (white)
 - Full command completions of native PowerShell commands
-- Includes a library of 21 snippets
+- Includes a library of 22 snippets
