@@ -13,15 +13,32 @@
 	<array>
 		<dict>
 			<key>match</key>
-			<string>((?&lt;=function )([a-zA-Z:\-\.0-9_])+)</string>
+			<string>((?&lt;=function )([a-zA-Z:\-\.0-9_])+(?=\{))</string>
 			<key>name</key>
 			<string>entity.name.function.powershell</string>
 		</dict>
 		<dict>
-			<key>match</key>
-			<string>((--%).*(?=#))</string>
-			<key>name</key>
+			<key>begin</key>
+			<string>(--%)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.powershell</string>
+				</dict>
+			</dict>
+			<key>contentName</key>
 			<string>source.powershell</string>
+			<key>end</key>
+			<string>($)</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#lineComments</string>
+				</dict>
+			</array>
 		</dict>
 		<dict>
 			<key>include</key>
