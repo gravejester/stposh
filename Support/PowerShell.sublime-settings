@@ -29,6 +29,9 @@
     // Makes tabs with modified files more visible
     "highlight_modified_tabs": true,
 
+    // Controls what scopes auto complete will be triggered in
+    "auto_complete_selector": "source - comment, comment.block.powershell",
+
     // List any packages to ignore here. When removing entries from this list,
     // a restart may be required if the package contains plugins.
     "ignored_packages": ["Vintage"]

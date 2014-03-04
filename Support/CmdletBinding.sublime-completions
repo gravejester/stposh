@@ -1,0 +1,12 @@
+{
+	"scope": "meta.cmdletbinding.powershell",
+	"completions":
+	[
+		{ "trigger": "ConfirmImpact", "contents": "ConfirmImpact = '$1'"},
+		{ "trigger": "DefaultParameterSetName", "contents": "DefaultParameterSetName = '$1'"},
+		{ "trigger": "HelpURI", "contents": "HelpURI = $1"},
+		{ "trigger": "SupportsPaging", "contents": "SupportsPaging = $1"},
+		{ "trigger": "SupportsShouldProcess", "contents": "SupportsShouldProcess = $1"},
+		{ "trigger": "PositionalBinding", "contents": "PositionalBinding = $1"}
+	]
+}

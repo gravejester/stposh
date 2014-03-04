@@ -1,0 +1,21 @@
+{
+	"scope": "comment.block.powershell",
+	"completions":
+	[
+		{ "trigger": "SYNOPSIS", "contents": ".SYNOPSIS"},
+		{ "trigger": "DESCRIPTION", "contents": ".DESCRIPTION"},
+		{ "trigger": "PARAMETER", "contents": ".PARAMETER $1"},
+		{ "trigger": "EXAMPLE", "contents": ".EXAMPLE"},
+		{ "trigger": "INPUTS", "contents": ".INPUTS"},
+		{ "trigger": "OUTPUTS", "contents": ".OUTPUTS"},
+		{ "trigger": "NOTES", "contents": ".NOTES"},
+		{ "trigger": "LINK", "contents": ".LINK"},
+		{ "trigger": "COMPONENT", "contents": ".COMPONENT"},
+		{ "trigger": "ROLE", "contents": ".ROLE"},
+		{ "trigger": "FUNCTIONALITY", "contents": ".FUNCTIONALITY"},
+		{ "trigger": "FORWARDHELPTARGETNAME", "contents": ".FORWARDHELPTARGETNAME $1"},
+		{ "trigger": "FORWARDHELPCATEGORY", "contents": ".FORWARDHELPCATEGORY $1"},
+		{ "trigger": "REMOTEHELPRUNSPACE", "contents": ".REMOTEHELPRUNSPACE $1"},
+		{ "trigger": "EXTERNALHELP", "contents": ".EXTERNALHELP $1"}
+	]
+}

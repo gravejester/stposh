@@ -1,0 +1,18 @@
+{
+	"scope": "meta.param.powershell",
+	"completions":
+	[
+		{ "trigger": "Alias", "contents": "[Alias('$1')]"},
+		{ "trigger": "AllowNull", "contents": "[AllowNull()]"},
+		{ "trigger": "AllowEmptyString", "contents": "[AllowEmptyString()]"},
+		{ "trigger": "AllowEmptyCollection", "contents": "[AllowEmptyCollection()]"},
+		{ "trigger": "ValidateCount", "contents": "[ValidateCount($1,$2)]"},
+		{ "trigger": "ValidateLength", "contents": "[ValidateLength($1,$2)]"},
+		{ "trigger": "ValidatePattern", "contents": "[ValidatePattern('$1')]"},
+		{ "trigger": "ValidateRange", "contents": "[ValidateRange($1,$2)]"},
+		{ "trigger": "ValidateScript", "contents": "[ValidateScript({$1})]"},
+		{ "trigger": "ValidateSet", "contents": "[ValidateSet('$1')]"},
+		{ "trigger": "ValidateNotNull", "contents": "[ValidateNotNull()]"},
+		{ "trigger": "ValidateNotNullorEmpty", "contents": "[ValidateNotNullorEmpty()]"}
+	]
+}
