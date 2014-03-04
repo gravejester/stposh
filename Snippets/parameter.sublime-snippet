@@ -4,6 +4,5 @@
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>parameter</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>meta.scriptblock.powershell</scope>
-	<description>[Parameter()]</description>
+	<scope>meta.scriptblock.powershell, meta.param.powershell</scope>
 </snippet>
