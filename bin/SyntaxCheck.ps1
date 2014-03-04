@@ -1,12 +1,21 @@
 # Script to test Sublime Text syntax highlighting
 
-# These function declarations should all be highlighted and show up in the symbols list
+ # These function declarations should all be highlighted and show up in the symbols list
 function MyFunction{}
-function My-Function{}
+function My-Function         {}
 function My.Function{}
 function My-Function.Other{}
 function Some.other.function{}
-function MyFunction2{}
+function MyFunction2 {}
+function MyFunction3
+{
+
+}
+
+# This one should not be matched (except the reserved word 'function')
+function MyFunction4 sdklskdls
+
+
 
 # --% instructs the parser to stop parsing until next line
 echoargs.exe --% %USERNAME%,this=$something{weird 1} # line comments should still work
@@ -56,14 +65,15 @@ $outHash = @{
 $var = 'Sub Expression'
 $string = "String with a $($var)!"
 
-# Here String
+# Here String Double
 $query = @"
-	SELECT * FROM users WHERE Name LIKE '%John%'
+	SELECT * FROM users WHERE $Name LIKE '%John%'
 "@
-$html = @"
-<h1>Heading</h1>
-<b>Welcome to my site</b>
-"@
+
+# Here String Single
+$query = @'
+	SELECT * FROM users WHERE $Name LIKE ''%John%''
+'@
 
 # Double quoted string
 "Double quoted string"
@@ -90,8 +100,8 @@ $_
 678.45
 1024mb
 
-# Advanced Functions stuff
-function Test-Function{
+# Advanced Function
+Function Test-Function{
 	[CmdletBinding(SupportsShouldProcess = $true)]
 	[OutputType([string])]
 
@@ -104,7 +114,7 @@ function Test-Function{
 		[ValidateNotNull()]
 		[int]$Timeout = 10000, # ms
 
-		[switch]$PerformCheck = $false,
+		[switch]$PerformCheck = $false
 	)
 
 	BEGIN{
@@ -118,4 +128,29 @@ function Test-Function{
 	}
 
 	END{Write-Host 'Goodbye'}
+}
+
+# Advanced functions outside of a script block
+[CmdletBinding()]
+[OutputType([string])]
+param(
+	[Parameter(Position = 0, Mandatory = $true)]
+	[string]$p
+)
+
+BEGIN{
+
+}
+
+PROCESS{
+}
+
+END{
+}
+
+# Filters
+filter Get-ErrorLog ([switch]$message)
+{
+  if ($message) { out-host -inputobject $_.Message }
+  else { $_ }
 }
