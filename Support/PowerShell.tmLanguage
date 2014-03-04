@@ -12,10 +12,52 @@
 	<key>patterns</key>
 	<array>
 		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.powershell</string>
+				</dict>
+			</dict>
 			<key>match</key>
-			<string>((?&lt;=function )([a-zA-Z:\-\.0-9_])+(?=\{))</string>
-			<key>name</key>
-			<string>entity.name.function.powershell</string>
+			<string>(?&lt;=(function ))([a-zA-Z:\-\.0-9_]+)(?=(\s*\{|$))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.powershell</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;=(Function ))([a-zA-Z:\-\.0-9_]+)(?=(\s*\{|$))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.powershell</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;=(filter ))([a-zA-Z:\-\.0-9_]+)(?=(\s*\{|$))</string>
+		</dict>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.powershell</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?&lt;=(Filter ))([a-zA-Z:\-\.0-9_]+)(?=(\s*\{|$))</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -54,6 +96,18 @@
 		</dict>
 		<dict>
 			<key>include</key>
+			<string>#param</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#cmdletBinding</string>
+		</dict>
+		<dict>
+			<key>include</key>
+			<string>#outputType</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#arithmeticOperators</string>
 		</dict>
 		<dict>
@@ -87,10 +141,6 @@
 		<dict>
 			<key>include</key>
 			<string>#scriptBlock</string>
-		</dict>
-		<dict>
-			<key>include</key>
-			<string>#hereString</string>
 		</dict>
 		<dict>
 			<key>include</key>
@@ -178,7 +228,7 @@
 				</dict>
 			</dict>
 			<key>contentName</key>
-			<string>cmdletBinding</string>
+			<string>meta.cmdletbinding.powershell</string>
 			<key>end</key>
 			<string>(\)\])</string>
 			<key>patterns</key>
@@ -266,26 +316,6 @@
 				<dict>
 					<key>include</key>
 					<string>#numericConstants</string>
-				</dict>
-			</array>
-		</dict>
-		<key>hereString</key>
-		<dict>
-			<key>begin</key>
-			<string>(@")</string>
-			<key>end</key>
-			<string>("@)</string>
-			<key>name</key>
-			<string>string.quoted.double.herestring.powershell</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>text.html.basic</string>
 				</dict>
 			</array>
 		</dict>
@@ -391,7 +421,7 @@
 		<key>param</key>
 		<dict>
 			<key>begin</key>
-			<string>(\b(?i:param)\b)(\s|)(\(*$|\()</string>
+			<string>(?i:(param))(\s*\(|$)</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -401,7 +431,7 @@
 				</dict>
 			</dict>
 			<key>contentName</key>
-			<string>param</string>
+			<string>meta.param.powershell</string>
 			<key>end</key>
 			<string>(\)$)</string>
 			<key>patterns</key>
@@ -468,6 +498,8 @@
 					<string>keyword.control.powershell</string>
 				</dict>
 			</dict>
+			<key>contentName</key>
+			<string>meta.parameter.powershell</string>
 			<key>end</key>
 			<string>(\))(\])</string>
 			<key>patterns</key>
@@ -643,18 +675,6 @@
 			<string>meta.scriptblock.powershell</string>
 			<key>patterns</key>
 			<array>
-				<dict>
-					<key>include</key>
-					<string>#param</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#cmdletBinding</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>#outputType</string>
-				</dict>
 				<dict>
 					<key>include</key>
 					<string>$self</string>
